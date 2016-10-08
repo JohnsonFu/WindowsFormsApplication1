@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="StudentSchema"
+    targetNamespace="http://tempuri.org/StudentSchema.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/StudentSchema.xsd"
+    xmlns:mstns="http://tempuri.org/StudentSchema.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="学生信息">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="记录" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="记录">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element  name="学号" type="xs:unsignedLong"/>
+        <xs:element name="姓名" type="xs:string"/>
+        <xs:element name="年龄" >
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:minInclusive value="0"/>
+              <xs:maxInclusive value="120"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="专业" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
